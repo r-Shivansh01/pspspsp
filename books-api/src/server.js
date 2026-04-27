@@ -1,8 +1,7 @@
 const app = require('./app');
 
-const PORT = process.env.PORT || 8080;
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, HOST, () => {
-  console.log(`Books API running on http://${HOST}:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Books API running on port ${PORT}`);
 });

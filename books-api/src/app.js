@@ -5,6 +5,17 @@ const app = express();
 
 app.use(express.json());
 
+// Welcome route
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'Welcome to the Books API',
+    endpoints: {
+      health: '/health',
+      books: '/books'
+    }
+  });
+});
+
 // Health check endpoint — used by Docker, Kubernetes, and Render
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
